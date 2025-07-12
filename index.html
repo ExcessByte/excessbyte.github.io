@@ -1,1 +1,87 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            width: 300px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #007bff;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .email {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #007bff;
+            margin: 0 10px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="profile.jpg" alt="Your Name" class="profile-pic">
+        <h1>Eric Denny</h1>
+        <p class="email">ericdenny26@gmail.com</p>
+        <div class="social-links">
+            <a href="https://github.com/ExcessByte" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/eric0x44/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/EricD2116" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.social-links a').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.transform = 'scale(1.2)';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
