@@ -3,107 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Denny - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400|Jura:400">
+    <title>Your Name - Portfolio</title>
+    <!-- Google Fonts: Inter and Jura -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Jura:wght@400&display=swap" rel="stylesheet">
     <style>
+        /* Global Box Sizing */
         * {
             box-sizing: border-box;
         }
 
+        /* CSS Variables for Colors */
         :root {
-            --c: 238, 199, 99; /* Yellow-orange accent */
-            --t: 204, 204, 204; /* Text color */
+            --c: 238, 199, 99; /* Primary accent color (yellowish) */
+            --t: 204, 204, 204; /* Text color (light gray) */
         }
 
+        /* Body Styling: Full viewport, centered content, no scrolling */
         body {
-            margin: 0;
-            height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
             background-color: #000;
-            font-family: 'Jura', sans-serif;
+            margin: 0;
+            font-family: "Jura", sans-serif; /* Fallback font */
             color: rgb(var(--t));
-            overflow: hidden;
+            position: relative;
+            overflow: hidden; /* Prevents all scrolling */
+            height: 100vh; /* Ensures body takes full viewport height */
+            width: 100vw; /* Ensures body takes full viewport width */
         }
 
-        .card {
-            background: rgba(var(--c), 0.1);
-            border: 1px solid rgba(var(--c), 0.3);
-            border-radius: 15px;
-            box-shadow: 0 0 20px 1px rgba(var(--c), 0.3);
+        /* Heading and Paragraph Reset */
+        h1,
+        h2,
+        h3,
+        p {
+            font-weight: normal;
+            margin: 0; /* Reset default margins */
+        }
+
+        /* Main Heading Style */
+        h1 {
+            font-size: 4rem; /* Adjusted for a single page */
+            margin-bottom: 1.5rem;
             text-align: center;
-            padding: 20px;
-            width: 320px;
-            max-height: 80vh;
+        }
+
+        /* Paragraph Style */
+        p {
+            line-height: 150%; /* Adjusted for concise display */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Profile Section Layout */
+        .profile-section {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            max-width: 600px; /* Limit width for better readability */
+            text-align: center;
         }
 
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 2px solid rgb(var(--c));
+        /* Profile Photo Styling */
+        .profile-photo {
+            width: 200px; /* Set a fixed size for your photo */
+            height: 200px;
+            border-radius: 50%; /* Makes the photo circular */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            border: 3px solid rgb(var(--c)); /* Add a border matching your theme */
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(var(--c), 0.5); /* Subtle glow effect */
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
-            color: rgb(var(--c));
-            text-shadow: 0 0 20px 1px rgba(var(--c), 1);
-            font-weight: normal;
-        }
-
+        /* Email Text Style */
         .email {
-            font-size: 1rem;
-            color: rgb(var(--t));
-            margin-bottom: 15px;
-            opacity: 0.8;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
         }
 
+        /* Social Links Container Layout */
         .social-links {
             display: flex;
-            gap: 12px;
+            gap: 1.5rem; /* Space between links */
+            flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+            justify-content: center;
         }
 
+        /* Social Link Button Styling */
         .social-links a {
-            font-size: 1.5rem;
             color: rgb(var(--c));
-            text-shadow: 0 0 10px rgba(var(--c), 0.5);
-            transition: color 0.3s, transform 0.3s;
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgb(var(--c), 0.5);
+            border-radius: 5px;
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
         }
 
+        /* Social Link Hover Effect */
         .social-links a:hover {
-            color: rgba(var(--c), 0.8);
-            transform: scale(1.2);
+            background-color: rgb(var(--c), 0.2);
+            box-shadow: 0 0 15px rgba(var(--c), 0.7);
         }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+            .email {
+                font-size: 1rem;
+            }
+            .social-links a {
+                font-size: 1.2rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+            .profile-section {
+                padding: 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="card">
-        <img src="profile.jpg" alt="Eric Denny" class="profile-pic">
-        <h1>Eric Denny</h1>
-        <p class="email">ericdenny26@gmail.com</p>
-        <div class="social-links">
-            <a href="https://github.com/ExcessByte" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/eric0x44/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/EricD2116" target="_blank"><i class="fab fa-twitter"></i></a>
+    <main id="portfolio-content">
+        <div class="profile-section">
+            <!-- Replace 'https://placehold.co/200x200/EEC763/000000?text=Your+Photo' with your actual photo URL -->
+            <img src="https://placehold.co/200x200/EEC763/000000?text=Your+Photo" alt="Your Photo" class="profile-photo">
+            <h1>Your Name</h1>
+            <p class="email">your.email@example.com</p>
+            <div class="social-links">
+                <!-- Replace '#' with your actual social media profile URLs -->
+                <a href="#" target="_blank" aria-label="LinkedIn Profile">LinkedIn</a>
+                <a href="#" target="_blank" aria-label="GitHub Profile">GitHub</a>
+                <a href="#" target="_blank" aria-label="Twitter Profile">Twitter</a>
+                <!-- Add more social links as needed -->
+                <!-- Example: <a href="#" target="_blank" aria-label="Portfolio Website">Website</a> -->
+            </div>
         </div>
-    </div>
+    </main>
+
     <script>
-        document.querySelectorAll('.social-links a').forEach(link => {
-            link.addEventListener('mouseover', () => {
-                link.style.transform = 'scale(1.2)';
-            });
-            link.addEventListener('mouseout', () => {
-                link.style.transform = 'scale(1)';
-            });
-        });
+        // No JavaScript is needed for this static, non-scrollable portfolio.
+        // The previous Codepen's JS was for scrolling functionality, which is now removed.
     </script>
 </body>
 </html>
