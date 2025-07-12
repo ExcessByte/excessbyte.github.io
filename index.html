@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eric Denny - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400|Jura:400">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --c: 238, 199, 99; /* Yellow-orange accent */
+            --t: 204, 204, 204; /* Text color */
+        }
+
         body {
             margin: 0;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #1e1e2f, #2a2a4a);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #000;
+            font-family: 'Jura', sans-serif;
+            color: rgb(var(--t));
             overflow: hidden;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(var(--c), 0.1);
+            border: 1px solid rgba(var(--c), 0.3);
+            border-radius: 15px;
+            box-shadow: 0 0 20px 1px rgba(var(--c), 0.3);
             text-align: center;
             padding: 20px;
             width: 320px;
@@ -30,7 +40,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .profile-pic {
@@ -39,32 +48,38 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
-            border: 2px solid #ff6bcb;
+            border: 2px solid rgb(var(--c));
         }
 
         h1 {
-            font-size: 22px;
+            font-size: 2.5rem;
             margin: 10px 0;
-            color: #ffffff;
-            font-weight: 600;
+            color: rgb(var(--c));
+            text-shadow: 0 0 20px 1px rgba(var(--c), 1);
+            font-weight: normal;
         }
 
         .email {
-            font-size: 14px;
-            color: #d1d1f0;
+            font-size: 1rem;
+            color: rgb(var(--t));
             margin-bottom: 15px;
             opacity: 0.8;
         }
 
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
         .social-links a {
-            font-size: 20px;
-            color: #ff6bcb;
-            margin: 0 12px;
+            font-size: 1.5rem;
+            color: rgb(var(--c));
+            text-shadow: 0 0 10px rgba(var(--c), 0.5);
             transition: color 0.3s, transform 0.3s;
         }
 
         .social-links a:hover {
-            color: #ff8ce6;
+            color: rgba(var(--c), 0.8);
             transform: scale(1.2);
         }
     </style>
