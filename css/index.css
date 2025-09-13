@@ -1,0 +1,73 @@
+.hero {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: space-between;
+  margin-top: 50px;
+  gap: 40px;
+}
+
+.img-cont img {
+  width: clamp(300px, 40vw, 500px);
+  height: clamp(400px, 50vw, 600px);
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.hero h1 {
+  font-size: clamp(80px, 12vw, 155px);
+  margin: 0;
+  line-height: 1;
+}
+
+.hero h2 {
+  font-size: clamp(40px, 6vw, 75px);
+  margin: 0 0 20px 0;
+}
+
+.txt-cont .cta-btn {
+  margin: 30px 0;
+}
+
+.txt-cont .cta-btn a {
+  text-decoration: none;
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--background-color);
+  padding: 15px 25px;
+  border: 2px solid var(--secondary-color);
+  transition: all 0.3s ease;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.about-link {
+  font-size: 18px;
+  border-bottom: 2px solid;
+  text-decoration: none;
+  color: #423F42;
+}
+
+@media (max-width: 585px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .txt-cont {
+    width: 80%;
+    min-width: 180px;
+  }
+  .img-cont img {
+    height: auto;
+    border-radius: 500px;
+  }
+  .txt-cont .cta-btn a {
+    border-radius: 50px;
+  }
+}
